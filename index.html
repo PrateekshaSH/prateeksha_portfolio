@@ -339,6 +339,73 @@
                 <img src="pp4.jpeg" alt="Report Details">
             </div>
         </div>
+
+         <div class="project-container">
+            <!-- Text Section -->
+            <div class="project-text">
+                <h1>Blink Chat – A Real-Time web based messaging platform</h1>
+                <p class="technology">Technology: Web Development</p>
+
+                <ul class="features">
+                    <li>Built a real-time web-based chat app using MERN, Socket.IO, and Cloudinary.</li>
+                    <li> Integrated media sharing and Stripe payments. Designed responsive UI for both privateand group chats</li>
+                    
+                </ul>
+                <button class="read-more-button" id="tran">
+                    <span>Read More</span>
+                    <span>→</span>
+                </button>
+                <div class="reveal" id="reveal"></div>
+
+                <script>
+                    // const pages = ["page2.html"];
+                    // let currentPage = 0;
+
+                    // const button = document.getElementById("tran");
+                    button.addEventListener("click", (event) => {
+                        const buttonRect = button.getBoundingClientRect();
+                        const x = buttonRect.left + buttonRect.width / 2;
+                        const y = buttonRect.top + buttonRect.height / 2;
+
+                        // Trigger the animation
+                        const reveal = document.getElementById("reveal");
+                        reveal.style.backgroundColor = "#000"; // Set the transition color
+
+                        anime({
+                            targets: reveal,
+                            clipPath: [`circle(0% at ${x}px ${y}px)`, `circle(150% at ${x}px ${y}px)`],
+                            easing: "easeInOutQuad",
+                            duration: 1000,
+                            complete: () => {
+                                // Increment the page index
+                                currentPage++;
+
+                                // Check if there are more pages
+                                if (currentPage >= pages.length) {
+                                    currentPage = 0; // Reset to the first page if it exceeds
+                                }
+
+                                // Redirect to the next page
+                                window.location.href = pages[currentPage];
+                            }
+                        });
+                    });
+                </script>
+
+            </div>
+
+
+            <!-- Image Carousel Section -->
+            <div class="project-image1">
+                <img src="p home page.png" alt="Rider Detection" class="active">
+                <img src="p login.png" alt="Processing Data">
+                
+            </div>
+        </div>
+
+
+
+        
     </section>
 
     <script>
